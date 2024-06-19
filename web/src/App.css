@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #222;
+}
+
+.form-comp {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-comp form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-comp form input,
+select,
+button,
+textarea {
+  padding: 0.5rem;
+  height: 2rem;
+  margin: 0.5rem;
+}
+
+.form-comp form textarea {
+  height: 5rem;
+}
+
+.container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.activity {
+  margin: 1rem;
+  border: 2px solid white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  padding: 1rem;
+}
+
+.activity:first-child {
+  margin-top: 2rem;
+}
+
+.activity .left {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity .left h2,
+h4,
+h5,
+h6 {
+  padding: 0.3rem;
+}
+
+.activity .right {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#danger {
+  background-color: rgb(220, 73, 73);
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(181, 59, 59);
+  }
+}
+
+#blue {
+  background-color: rgb(86, 140, 255);
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(48, 93, 192);
+  }
+}
