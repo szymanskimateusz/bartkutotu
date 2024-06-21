@@ -11,17 +11,27 @@ export default function FormCompUpdate(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const updatedActivity = {
+      id: props.id,
+      title,
+      description,
+      dueDate,
+      priority,
+    };
+
     await fetch("http://localhost:5149/Activity/${props.id}", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ title, description, dueDate, priority }),
+      body: JSON.stringify(updatedActivity),
     })
       .then((res) => {
         if (res.ok) {
           console.log("Activity updated successfully!");
           setMessage("Updated!");
+          props.updateActivity(updatedActivity);
+          props.setShowUpdate(false);
         } else {
           console.log("Error updating activity");
           setMessage("Ops! Something went wrong!");

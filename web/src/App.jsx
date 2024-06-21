@@ -12,6 +12,14 @@ function App() {
     setActivities([...activities, newActivity]);
   };
 
+  const updateActivity = (updatedActivity) => {
+    setActivities(
+      activities.map((activity) =>
+        activity.id === updatedActivity.id ? updatedActivity : activity
+      )
+    );
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -44,6 +52,7 @@ function App() {
         description={activity.description}
         dueDate={activity.dueDate}
         priority={activity.priority}
+        updateActivity={updateActivity}
       />
     );
   });

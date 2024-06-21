@@ -41,6 +41,8 @@ export default function Activity(props) {
             description={props.description}
             dueDate={props.dueDate}
             priority={props.priority}
+            updateActivity={props.updateActivity}
+            setShowUpdate={setShowUpdate}
           />
         </div>
       )}

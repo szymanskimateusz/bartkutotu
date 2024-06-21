@@ -42,6 +42,7 @@ export default function FormComp({ activities, addActivity }) {
       .catch((error) => {
         console.log(error);
         setMessage("Ops! Something went wrong!");
+        handleAddActivity();
       });
 
     setShowMsg(true);
