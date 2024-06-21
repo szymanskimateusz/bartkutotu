@@ -24,7 +24,7 @@ export default function FormCompUpdate(props) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(updatedActivity),
+      body: JSON.stringify(title, description, dueDate, priority),
     })
       .then((res) => {
         if (res.ok) {
