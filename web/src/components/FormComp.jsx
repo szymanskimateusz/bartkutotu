@@ -33,14 +33,15 @@ export default function FormComp({ activities, addActivity }) {
         if (res.ok) {
           console.log("Activity added successfully!");
           setMessage("Saved!");
-          handleAddActivity;
+          handleAddActivity();
         } else {
           console.log("Error adding activity");
-          setMessage("Ops! Something went wrong.");
+          setMessage("Ops! Something went wrong!");
         }
       })
       .catch((error) => {
         console.log(error);
+        setMessage("Ops! Something went wrong!");
       });
 
     setShowMsg(true);
@@ -88,9 +89,9 @@ export default function FormComp({ activities, addActivity }) {
               onChange={(e) => setPriority(e.target.value)}
               required
             >
-              <option value="1">Low</option>
-              <option value="2">Medium</option>
-              <option value="3">High</option>
+              <option value={1}>Low</option>
+              <option value={2}>Medium</option>
+              <option value={3}>High</option>
             </select>
             <button type="submit">Save</button>
           </form>

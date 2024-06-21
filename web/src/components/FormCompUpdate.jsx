@@ -24,11 +24,12 @@ export default function FormCompUpdate(props) {
           setMessage("Updated!");
         } else {
           console.log("Error updating activity");
-          setMessage("Ops! Something went wrong.");
+          setMessage("Ops! Something went wrong!");
         }
       })
       .catch((error) => {
         console.log(error);
+        setMessage("Ops! Something went wrong!");
       });
   };
 
@@ -67,9 +68,9 @@ export default function FormCompUpdate(props) {
             onChange={(e) => setPriority(e.target.value)}
             required
           >
-            <option value="1">Low</option>
-            <option value="2">Medium</option>
-            <option value="3">High</option>
+            <option value={1}>Low</option>
+            <option value={2}>Medium</option>
+            <option value={3}>High</option>
           </select>
           <button type="submit">Save</button>
         </form>
