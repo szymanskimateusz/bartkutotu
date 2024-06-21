@@ -31,7 +31,7 @@ export default function FormCompUpdate(props) {
           console.log("Activity updated successfully!");
           setMessage("Updated!");
           props.updateActivity(updatedActivity);
-          props.setShowUpdate(false);
+          props.setShowUpdate(true);
         } else {
           console.log("Error updating activity");
           setMessage("Ops! Something went wrong!");
